@@ -1,1 +1,13 @@
-Hello World!
+<html>
+  <head>
+    <title>WHACK Team 5</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+  </head>
+  <body>
+      <h1>Hello World!</h1>
+			<p>
+				Results: {{results}}
+			</p>
+  </body>
+</html>
