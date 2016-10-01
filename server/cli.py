@@ -66,8 +66,13 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 def read_file():
+    # print 'HELLO'
     rowlist = []
-    with open("/Users/Admin/Downloads/product_data.txt") as f:
+    count = 0
+    with open("/Users/Admin/Downloads/product_data.tsv") as f:
+    # with open("/Users/Admin/whackathon/foo.csv")
         for l in f:
-            rowlist.append(tuple(l.split('\t')))
+            rowlist.append(tuple(l.strip().split('\t')))
+            # print count
+            count += 1
     return rowlist
