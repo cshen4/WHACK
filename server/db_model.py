@@ -83,12 +83,13 @@ def test():
     # sql = "DROP TABLE product_data"
     # sql = "DROP TABLE foo2"
     # sql = "CREATE TABLE foo(SKU VARCHAR(10), Name VARCHAR(80), Unit of Measure VARCHAR(10));"
-    sql = "COPY foo from LOCAL '/Users/Admin/vertica-hackathon/foo.csv'"
+    # sql = "COPY foo from LOCAL '/Users/Admin/vertica-hackathon/foo.csv'"
     # sql = "CREATE TABLE product_data(SKU VARCHAR(10), Name VARCHAR(80), Category VARCHAR(80), Unit_of_Measure VARCHAR(10), Manufacturer VARCHAR(80), Brand VARCHAR(80), Manufacturer_Code VARCHAR(20), Manufacturer_Name VARCHAR(80), Vendor VARCHAR(80), Vendor_Code VARCHAR(20), Vendor_Name VARCHAR(80), Cold_Chain BOOLEAN, UPC VARCHAR(20), NPC VARCHAR(20));"
     # sql = "COPY product_data FROM LOCAL '/Users/Admin/Downloads/Partners In Health - Product Data - Sheet1.csv' DELIMITER ',';"
     # query_db("INSERT INTO foo VALUES (1)")
     # sql = "SELECT * FROM product_data;"
     # sql = "SELECT * FROM foo"
+    sql = "SELECT SKU, inventory1 from product_data where inventory1 < 100 order by inventory1 DESC, SKU ASC"
     results = query_db(sql)
     print results
     return results
