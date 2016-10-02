@@ -13,7 +13,8 @@ from boto3.dynamodb.conditions import Key
 from boto3.session import Session
 from twilio.rest import TwilioRestClient
 
-from cli import *
+from server.templates.cli import *
+# from cli import *
 
 # create Twilio session
 # Add Twilio Keys

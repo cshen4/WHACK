@@ -83,16 +83,8 @@ def test():
     # sql = "DROP TABLE product_data"
     # sql = "DROP TABLE foo2"
     # sql = "CREATE TABLE foo(SKU VARCHAR(10), Name VARCHAR(80), Unit of Measure VARCHAR(10));"
-<<<<<<< Updated upstream:server/db_model.py
-=======
-<<<<<<< HEAD:lambda_function/server/db_model.py
-    sql = "COPY foo from LOCAL '/Users/Admin/vertica-hackathon/foo.csv'"
-    # sql = "CREATE TABLE product_database(SKU VARCHAR(10), Name VARCHAR(80), Category VARCHAR(80), Unit_of_Measure VARCHAR(10), Manufacturer VARCHAR(80), Brand VARCHAR(80), Manufacturer_Code VARCHAR(20), Manufacturer_Name VARCHAR(80), Vendor VARCHAR(80), Vendor_Code VARCHAR(20), Vendor_Name VARCHAR(80), Cold_Chain BOOLEAN, UPC VARCHAR(20), NPC VARCHAR(20));"
-=======
->>>>>>> Stashed changes:lambda_function/server/db_model.py
     # sql = "COPY foo from LOCAL '/Users/Admin/vertica-hackathon/foo.csv'"
-    # sql = "CREATE TABLE product_data(SKU VARCHAR(10), Name VARCHAR(80), Category VARCHAR(80), Unit_of_Measure VARCHAR(10), Manufacturer VARCHAR(80), Brand VARCHAR(80), Manufacturer_Code VARCHAR(20), Manufacturer_Name VARCHAR(80), Vendor VARCHAR(80), Vendor_Code VARCHAR(20), Vendor_Name VARCHAR(80), Cold_Chain BOOLEAN, UPC VARCHAR(20), NPC VARCHAR(20));"
->>>>>>> origin/master:server/db_model.py
+    # sql = "CREATE TABLE product_database(SKU VARCHAR(10), Name VARCHAR(80), Category VARCHAR(80), Unit_of_Measure VARCHAR(10), Manufacturer VARCHAR(80), Brand VARCHAR(80), Manufacturer_Code VARCHAR(20), Manufacturer_Name VARCHAR(80), Vendor VARCHAR(80), Vendor_Code VARCHAR(20), Vendor_Name VARCHAR(80), Cold_Chain BOOLEAN, UPC VARCHAR(20), NPC VARCHAR(20));"
     # sql = "COPY product_data FROM LOCAL '/Users/Admin/Downloads/Partners In Health - Product Data - Sheet1.csv' DELIMITER ',';"
     # query_db("INSERT INTO foo VALUES (1)")
     # sql = "SELECT * FROM product_data;"
