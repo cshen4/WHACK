@@ -1,7 +1,3 @@
-
-from twilio.rest import TwilioRestClient
-
-
 def make_dicts(cursor, row):
     """
         Turn query results into dictionaries keyed by column name
@@ -66,6 +62,7 @@ def query_db(query, args=(), one=False):
         rv = [{'error': e}]
 
     cur.close()
+    # print (rv[0] if rv else None) if one else rv
     return (rv[0] if rv else None) if one else rv
 
 def read_file():
@@ -79,34 +76,11 @@ def read_file():
             # print count
             count += 1
     return rowlist
+
 def sku_dict():
     d = {}
     q = query_db("SELECT SKU from product_database")
     for code in q:
-        print code['SKU']
+        # print code['SKU']
         d.update({code['SKU']:0})
     return d
-
-# Your Account Sid and Auth Token from twilio.com/user/account
-account_sid = "AC3af4bdae50407788d5c400e476515950"
-auth_token  = "65d12dd7f3b0100dec3f0c1e9a4eb9dd"
-client = TwilioRestClient(account_sid, auth_token)
-
-sms = client.sms.messages.list()
-
-d = sku_dict()
-
-for x in sms:
-    # list = x.body.split('*')
-
-    count = 0
-    c = ''
-    for el in x.body.split():
-        print el
-        if el.isdigit():
-            print 'digit'
-            count = int(el)
-        if el in d:
-            print 'code'
-            c = el
-    query_db("UPDATE product_database SET Inventory1 = " + str(count) + " WHERE SKU = " + "'" + c + "'; commit;")
