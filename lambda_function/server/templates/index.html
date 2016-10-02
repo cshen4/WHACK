@@ -1,0 +1,107 @@
+      <html>
+        <head>
+          <title>WHACK Team 5</title>
+      		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+      		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+        <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+      div.container {
+        width: 100%;
+        border: 1px solid gray;
+      }
+
+      header, footer {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        clear: left;
+        text-align: center;
+      }
+
+      nav {
+        float: left;
+        max-width: 160px;
+        margin: 0;
+        padding: 1em;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      nav ul a {
+        text-decoration: none;
+      }
+
+      article {
+        margin-left: 170px;
+        border-left: 1px solid gray;
+        padding: 1em;
+        overflow: hidden;
+      }
+      </style>
+        </head>
+        <body>
+            <div class="container">
+              <header>
+            <h1>Partners in Health: product inventory</h1>
+          </header>
+
+          <nav>
+            <ul>
+              <li><a href="#">Location 1</a></li>
+              <li><a href="#">Location 2</a></li>
+              <li><a href="#">Location 3</a></li>
+            </ul>
+          </nav>
+
+          <article>
+            <h1>Location 1: input the name of the hospital</h1>
+            <hr>
+              <p>
+
+                <table>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Number of Units needed</th>
+                  </tr>
+    {% for i in range(0, 10) %}
+                  <tr>
+                <td> {{results[i]['SKU']}}</td>
+                <td>{{results[i]['inventory1']}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+        			</p>
+
+              <h1>Location 2: input the name of the hospital</h1>
+              <hr>
+                <p>
+          				products that are missing from location 2
+          			</p>
+
+                <h1>Location 2: input the name of the hospital</h1>
+                <hr>
+                  <p>
+            				products that are missing from location 3
+            			</p>
+
+            </article>
+        </body>
+      </html>
