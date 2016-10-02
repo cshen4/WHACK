@@ -11,12 +11,15 @@ import json
 from datetime import date
 from datetime import timedelta
 
+# up = False
+
 @app.route("/")
 def index():
 
     # results = db.select_one()
+    # if up == False:
     db.updateInv()
-
+    up = True
     results = db.test()
     print 'got results'
     return render_template("index.html", results=results)
@@ -25,6 +28,8 @@ def index():
 def my_form_post():
 
     # text = request.form['text']
+    # if up == False:
+    db.updateInv()
     status = 0
     text = request.form
     for key in text.keys():
@@ -34,6 +39,7 @@ def my_form_post():
             if value.isdigit():
                 status = int(value)
                 db.updateShipment(status, key)
+
     # processed_text = text.upper()
     # print 'got text'
     # print text_1

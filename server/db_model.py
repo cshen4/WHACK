@@ -95,6 +95,7 @@ def test():
     return results
 
 def updateInv():
+    print 'HERE'
     account_sid = "AC3af4bdae50407788d5c400e476515950"
     auth_token  = "65d12dd7f3b0100dec3f0c1e9a4eb9dd"
     client = TwilioRestClient(account_sid, auth_token)
@@ -122,7 +123,7 @@ def updateInv():
                 cli.query_db("UPDATE product_database SET Inventory1 = " + str(count) + " WHERE SKU = " + "'" + c + "'; commit;")
             # client.messages.delete(x.sid)
             client.messages.create(to=x.from_, from_="+16179256605",
-                                    body="You've ordered " + str(count) + "units of " + c + ". Thank you!")
+                                    body="You've ordered " + str(count) + " units of " + c + ". Thank you!")
         client.messages.delete(x.sid)
 def updateShipment(ship, SKU):
     # print cli.query_db("SELECT Inventory1 FROM product_database WHERE SKU = " + "'" + SKU + "'; commit;" )[0]
@@ -134,7 +135,7 @@ def updateShipment(ship, SKU):
     client = TwilioRestClient(account_sid, auth_token)
 
     client.messages.create(to="+16097216990", from_="+16179256605",
-                            body=str(ship) + "units of " + SKU + "has been shipped!")
+                            body=str(ship) + " units of " + SKU + " has been shipped!")
 
 # @app.teardown_appcontext
 def close_connection(exception):

@@ -79,17 +79,16 @@ article {
               <th>Product Name</th>
               <th>SKU</th>
               <th>Number of Units Needed</th>
-              <th>Status of Order</th>
+              <th>Shipment Amount</th>
             </tr>
 {% for result in results %}
             <tr>
           <td> {{result['Name']}}</td>
           <td> {{result['SKU']}}</td>
           <td>{{result['inventory1']}}</td>
-          <td><form action = "/" method="POST">
+          <td><form action = "#" method="POST">
             <input type="text" name={{result['SKU']}}>
-            <input type="submit" name = "index" value="Submit"> </td>
-                        </tr>
+            <input type="submit" name = "index" value="Submit"> </tr>
         {% endfor %}
       </table>
         </p>

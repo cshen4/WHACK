@@ -1,37 +1,14 @@
-# Hackathon
-This is a getting started kit for Hackathons using Vertica!
+# MeetingtheDemand
+Handles requests via SMS for Partners in Health
 
-First clone the repo with:
+Due to the lack of technological infrastructure in many countries that Partners in Health support, there is an inaccurate flow of information regarding the demand os medical supplies
 
-    git clone git@github.com:vertica/hackathon.git vertica-hackathon
-    
-    cd vertica-hackathon
+The purpose of this program is to determine the true demand to avoid stocks outs and under ordering.
 
-## Install the vertica python client and other dependencies
-First you need to install the vertica python client, so that you can connect to the database by simply writing python code.
+How it works:
+1. Clients (locations with little access to internet) texts the product SKU and the quantity of the product needed to a Twilio number
+2. List of all products that a client requests is visible through a website that the Admin can use to determine which items are in demand
+3. Admin (Partners in Health) confirms the shipment of the product by entering on the website the amount of product sent
+4. Twilio responds back to client to confirm the order
 
-There are a few requirements for that. First, you need to install pip. If you are using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from python.org you will already have pip. Otherwise follow installation instructions here: https://pip.pypa.io/en/stable/installing/
-
-If you are using pip >= 1.4 and you don't already have pytz installed:
-    pip install --pre pytz
-    
-To install vertica-python with pip run the following command with sudo priviledges:
-
-    sudo pip install vertica-python
-
-You will get a prompt to enter your password. Enter your password and hit enter.
-
-More instructions and source code of the python client at: https://github.com/uber/vertica-python
-
-## Install Flask, a python framework and submit your first query
-
-Flask is a powerfull and lightweight python framework. It does all the dirty work of setting up a server. You can install it with:
-
-    sudo pip install flask
-
-Run your demo server that submits a select 1 query:
-
-    cd server
-    python server.py
-    
-Visit localhost:5000 to see the Hello World page.
+Utilizes Vertica database and the twilio api to enable the client and admin to have direct, organized contact regarding the demand of different medical products.
